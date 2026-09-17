@@ -7,7 +7,7 @@ from reportlab.platypus import (
 )
 from reportlab.lib.enums import TA_LEFT, TA_CENTER
 
-OUTPUT = "/Users/lyndalevy/Desktop/Week2_StudyGuide.pdf"
+OUTPUT = "/Users/lyndalevy/Desktop/study-guide-week2/Week2_StudyGuide.pdf"
 
 doc = SimpleDocTemplate(
     OUTPUT,
@@ -27,27 +27,27 @@ MGRAY = colors.HexColor("#c8d4e0")
 
 title_style = ParagraphStyle(
     "Title2", parent=styles["Normal"],
-    fontSize=13, leading=16, textColor=NAVY,
+    fontSize=14, leading=17, textColor=NAVY,
     fontName="Helvetica-Bold", alignment=TA_CENTER, spaceAfter=2,
 )
 sub_style = ParagraphStyle(
     "Sub", parent=styles["Normal"],
-    fontSize=7.5, leading=9.5, textColor=colors.HexColor("#4a4a4a"),
+    fontSize=8.5, leading=10.5, textColor=colors.HexColor("#4a4a4a"),
     fontName="Helvetica", alignment=TA_CENTER, spaceAfter=4,
 )
 lec_header_style = ParagraphStyle(
     "LecH", parent=styles["Normal"],
-    fontSize=8.5, leading=11, textColor=colors.white,
+    fontSize=9.5, leading=12, textColor=colors.white,
     fontName="Helvetica-Bold", alignment=TA_LEFT,
 )
 slide_style = ParagraphStyle(
     "Slide", parent=styles["Normal"],
-    fontSize=7, leading=9.2, textColor=colors.HexColor("#1a1a1a"),
+    fontSize=8, leading=10.2, textColor=colors.HexColor("#1a1a1a"),
     fontName="Helvetica", spaceBefore=2, spaceAfter=0,
 )
 note_style = ParagraphStyle(
     "Note", parent=styles["Normal"],
-    fontSize=6.3, leading=8, textColor=colors.HexColor("#555555"),
+    fontSize=7.3, leading=9, textColor=colors.HexColor("#555555"),
     fontName="Helvetica-Oblique", leftIndent=6, spaceBefore=0, spaceAfter=1,
 )
 
@@ -56,7 +56,7 @@ def i(text): return f"<i>{text}</i>"
 
 LECTURE_1 = [
     ("1.1", "Setup Checkpoint",
-     "Run <font name='Courier' size='6.5'>claude --version</font>; sort into categories A–D "
+     "Run <font name='Courier' size='7.5'>claude --version</font>; sort into categories A–D "
      "(ready / error / no access / not started).",
      None),
     ("1.2", "Course Site Navigation",
@@ -143,14 +143,14 @@ LECTURE_2 = [
      "Private repository — pushing does not publish a website; read actual errors aloud."),
     ("2.6", "Improve One Sentence",
      "Fix one sentence → create a <b>diff</b> (side-by-side before/after). "
-     "Second checkpoint records the change; update <font name='Courier' size='6.5'>next-steps.txt</font>.",
+     "Second checkpoint records the change; update <font name='Courier' size='7.5'>next-steps.txt</font>.",
      "Insist on ONE sentence — students who rewrite half can't read their own diff."),
     ("2.7", "Which Version Online?",
      "After committing, GitHub still shows the first version. "
      "Committing changes local; only pushing changes GitHub. Cycle runs twice to reinforce.",
      "The gap between committing and pushing is the most common beginner surprise."),
     ("2.8", "Fresh Session Pickup",
-     "New agent session reads <font name='Courier' size='6.5'>next-steps.txt</font> to continue. "
+     "New agent session reads <font name='Courier' size='7.5'>next-steps.txt</font> to continue. "
      "<b><i>\"Memory is not a file.\"</i></b> Saved text persists; chat memory does not.",
      "This screen justifies the whole meeting — watch a new session read their own note."),
     ("2.9", "Explain the Workflow",
@@ -218,7 +218,7 @@ story.append(Paragraph(
     "Trace = record that hides nothing &nbsp;·&nbsp; "
     "Save → Commit → Push",
     ParagraphStyle("Footer", parent=styles["Normal"],
-                   fontSize=6.5, leading=8.5, textColor=colors.HexColor("#333333"),
+                   fontSize=7.5, leading=9.5, textColor=colors.HexColor("#333333"),
                    fontName="Helvetica", alignment=TA_CENTER)
 ))
 
